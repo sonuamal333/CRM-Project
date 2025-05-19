@@ -6,7 +6,9 @@ from student.models import Baseclass
 
 class Batches(Baseclass):
 
-    name = models.CharField(max_length=50)
+    
+
+    name = models.CharField(max_length=15)
 
     start_date = models.DateField()
 
@@ -19,6 +21,9 @@ class Batches(Baseclass):
     batch_ended = models.BooleanField(default=False)
 
     ended_on = models.DateField(null=True,blank=True)
+
+    academic_counsellor = models.ForeignKey('academic_councellors.AcademicCounsellors',on_delete=models.SET_NULL,null=True)
+
 
     def __str__(self):
 

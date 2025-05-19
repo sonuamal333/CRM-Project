@@ -13,9 +13,9 @@ class Baseclass(models.Model):
 
     updated_at = models.DateTimeField(auto_now=True)
 
-class Meta:
+    class Meta:
 
-    abstract = True
+        abstract = True
 
 class CourseChoices(models.TextChoices):
     

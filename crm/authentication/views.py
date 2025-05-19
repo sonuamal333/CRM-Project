@@ -44,7 +44,7 @@ class LoginView(View):
                     
                     return redirect('dashboard')
                 
-                elif role in['Academic Councellor','Trainer']:
+                elif role in['Academic Counsellor','Trainer']:
 
                     return redirect('student')
                 
@@ -60,7 +60,7 @@ class LoginView(View):
         
 class LogoutView(View):
 
-    def post(self,request,*args,**kwargs):
+    def get(self,request,*args,**kwargs):
 
         logout(request)
 

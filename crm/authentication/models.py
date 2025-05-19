@@ -10,7 +10,7 @@ class RoleChoices(models.TextChoices):
 
     STUDENT = 'Student','Student'
 
-    ACADEMIC_COUNCILLOR = 'Academic Councillor','Academic Councillor'
+    ACADEMIC_COUNSELLOR = 'Academic Counsellor','Academic Counsellor'
 
     TRAINER ='Trainer','Trainer'
 

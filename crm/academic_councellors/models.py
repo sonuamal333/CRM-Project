@@ -2,9 +2,7 @@ from django.db import models
 
 from student.models import Baseclass,District
 
-# Create your models here.
-
-class Trainers(Baseclass):
+class AcademicCounsellors(Baseclass):
 
     profile = models.OneToOneField('authentication.Profile',on_delete=models.CASCADE)
 
@@ -14,7 +12,7 @@ class Trainers(Baseclass):
 
     employee_id = models.CharField(max_length=10)
 
-    photo = models.ImageField(upload_to='trainers')
+    photo = models.ImageField(upload_to='academiccounsellors')
 
     email = models.EmailField()
 
@@ -32,16 +30,14 @@ class Trainers(Baseclass):
     
     stream = models.CharField(max_length=25)
 
-    id_card = models.FileField(upload_to='trainers/idproof')
+    id_proof = models.FileField(upload_to='academic-counsellor/idproof')
 
-    course = models.ForeignKey('courses.Courses',null=True,on_delete=models.SET_NULL)
+    def _str_(self):
 
-    def __str__(self):
-
-        return f'{self.first_name}-{self.last_name}'
+     return f'{self.first_name} {self.last_name} '
     
     class Meta:
 
-        verbose_name = 'Trainers'
+        verbose_name = 'AcademicCounsellors'
 
-        verbose_name_plural ='Trainers'
+        verbose_name_plural ='AcademicCounsellors'
